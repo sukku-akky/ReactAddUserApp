@@ -19,11 +19,16 @@ const AddUser=()=>{
 
   const addUserHandler=(event)=>{
     event.preventDefault();
-    const userDetails={
-        name:latestName,
-        age:latestAge
+    if(latestName.trim().length===0){
+        alert("please enter a valid username")
+    } 
+    if(latestAge<=0){
+        alert("please enter a valid age")
     }
-    console.log(userDetails);
+    console.log(latestName,latestAge);
+    
+    setLatestName("");
+    setLatestAge("");
   }
 
   return (
