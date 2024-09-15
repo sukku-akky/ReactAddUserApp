@@ -4,7 +4,7 @@ import classes from "./AddUser.module.css"
 import Button from "../UI/Button";
 
 
-const AddUser=()=>{
+const AddUser=(props)=>{
     const [latestName,setLatestName]=useState("");
     const [latestAge,setLatestAge]=useState("");
 
@@ -25,7 +25,7 @@ const AddUser=()=>{
     if(latestAge<=0){
         alert("please enter a valid age")
     }
-    console.log(latestName,latestAge);
+    props.onAddUser(latestName,latestAge);
     
     setLatestName("");
     setLatestAge("");
